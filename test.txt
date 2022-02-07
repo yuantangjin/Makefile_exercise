@@ -1,0 +1,2 @@
+hi world! hi India mifans, how are you
+/home/ytj/ytj_code_exercise/mp3/app/link_obj/usb.o:usb.c usb.h lcd.o:lcd.c media.o:media.c

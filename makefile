@@ -1,21 +1,14 @@
 .PHONY:all clean
 
-SRCS = $(wildcard *.c)
-#OBJS = player.o lcd.o usb.o
-OBJS = $(SRCS:.c=.o)
-DEPS = $(SRCS:.c=.d)
-BIN = mp3
-all:$(BIN) $(DEPS)
-#include $(DEPS)
-$(BIN):$(OBJS)
-	gcc -o $@ $^
-#usb.o:usb.c usb.h
-#include usb.d
-%.o:%.c
-	gcc -o $@ -c $(filter %.c,$^)
-include $(DEPS)
-%.d:%.c
-	gcc -MM $^ > $@
+all:
+	make -C lcd
+	make -C media
+	make -C usb
+	make -C app
 clean:
-	@echo "OBJS = $(OBJS)"
-	rm -f $(BIN) $(OBJS) $(DEPS)
+	rm -rf mp3
+	rm -rf app/link_obj/*.o app/player.d
+	rm -rf usb/usb.d
+	rm -rf lcd/lcd.d
+	rm -rf media/media.d
+	rm -rf app/link_obj
