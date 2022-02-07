@@ -1,5 +1,5 @@
 
 BIN = mp3
 
-include ../common.mk
+include $(BUILD_ROOT)/common.mk
 
