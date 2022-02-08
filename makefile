@@ -7,6 +7,7 @@ all:
 	make -C lcd
 	make -C media
 	make -C usb
+	make -C math
 	make -C app
 clean:
 	rm -rf mp3
