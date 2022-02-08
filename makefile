@@ -14,4 +14,4 @@ clean:
 	rm -rf app/link_obj
 	rm -rf app/dep
 	rm -rf app/lib_obj
-	rm -rf lib
+	#rm -rf lib
